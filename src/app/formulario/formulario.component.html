@@ -1,0 +1,19 @@
+<div>    
+<form [formGroup]="formLogin" (submit)="send()" errorTailor>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="text" id="password" formControlName="password">
+    </div>
+    <div>
+        <label for="terms">Términos y condiciones</label>
+        <input type="checkbox" id="terms" formControlName="terms">
+    </div>
+    <button [disabled]="formLogin.invalid">send</button>
+</form>
+
+</div>
+es valido? {{ formLogin.valid }}
