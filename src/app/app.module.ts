@@ -7,6 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
+//Este modulo interacciona con los errores del formulario en CSS
+import { ErrorTailorModule } from '@ngneat/error-tailor';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,17 @@ import { FormularioComponent } from './formulario/formulario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'This field is required',
+          minlength: ({ requiredLength, actualLength }) => 
+                      `Expect ${requiredLength} but got ${actualLength}`,
+          invalidAddress: error => `Address isn't valid`
+        }
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
