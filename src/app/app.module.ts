@@ -23,7 +23,7 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
     ErrorTailorModule.forRoot({
       errors: {
         useValue: {
-          required: 'This field is required',
+          required: 'Este campo es requerido',
           minlength: ({ requiredLength, actualLength }) => 
                       `Expect ${requiredLength} but got ${actualLength}`,
           invalidAddress: error => `Address isn't valid`

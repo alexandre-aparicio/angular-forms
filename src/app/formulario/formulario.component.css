@@ -1,0 +1,7 @@
+input.ng-invalid.ng-touched {
+background: #f4d2cc;
+}
+
+input.ng-valid {
+background: #deffb6;
+}

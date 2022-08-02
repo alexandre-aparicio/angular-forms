@@ -1,19 +1,37 @@
-<div>    
+<div>
+    
 <form [formGroup]="formLogin" (submit)="send()" errorTailor>
+<ng-template let-error let-text="text" #tpl> 
+<!-- abajo lista el objeto y sus componentes para jugar con ellos-->
+<!-- {{ error | json }} {{ text }} -->
+<!-- Estos son los controles de error del texto-->
+<div *ngIf="error?.minlength">
+<i>No cumples caracteres mínimos, necesitas {{ error?.minlength?.requiredLength }}</i>
+</div>
+<div *ngIf="error?.required">
+<i>El campo password es necesario</i>
+</div>
+
+</ng-template>
     <div>
         <label for="email">Email</label>
         <input type="text" id="email" formControlName="email">
     </div>
     <div>
         <label for="password">Password</label>
-        <input type="text" id="password" formControlName="password">
+        <input type="text" id="password" formControlName="password" [controlErrorsTpl]="tpl">
     </div>
     <div>
         <label for="terms">Términos y condiciones</label>
         <input type="checkbox" id="terms" formControlName="terms">
     </div>
     <button [disabled]="formLogin.invalid">send</button>
+
+
 </form>
 
 </div>
+
 es valido? {{ formLogin.valid }}
+
+
