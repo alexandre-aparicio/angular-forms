@@ -1,6 +1,20 @@
 # AngularForms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Este proyecto estáelaborado en angular con un único comonente para validar formularios.
+
+Se exporta el siguiente módulos en el fichero app.module.ts
+
+`import { ReactiveFormsModule } from '@angular/forms';`
+
+Para los mensajes de error e interacción con el css se emplea la extensión error-tailor
+
+Se instala con el comando `npm i @ngneat/error-tailor` y se exporta en el app.module.ts
+
+`import { ErrorTailorModule } from '@ngneat/error-tailor';`
+
+Seguir las indicaciones del [error-tailor](https://www.npmjs.com/package/@ngneat/error-tailor).
+
+
 
 ## Development server
 

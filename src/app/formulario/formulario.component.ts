@@ -30,6 +30,11 @@ export class FormularioComponent implements OnInit {
           Validators.required,
           Validators.minLength(6)
         ]],
+        youtube: ['',
+        [
+          Validators.required,
+          Validators.pattern('^(https?\:\/\/)?((www\.)?youtube\.com|youtu\.be)\/.+$')
+        ]],
         terms: ['',
         [
           Validators.required,
